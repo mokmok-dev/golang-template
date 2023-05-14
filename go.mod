@@ -9,6 +9,7 @@ require (
 	github.com/google/wire v0.5.0
 	github.com/k0kubun/sqldef v0.15.25
 	github.com/kyleconroy/sqlc v1.18.0
+	github.com/lib/pq v1.10.9
 	github.com/spf13/viper v1.15.0
 	github.com/uptrace/opentelemetry-go-extra/otelzap v0.2.0
 	go.opentelemetry.io/contrib/detectors/gcp v1.16.1
@@ -54,7 +55,6 @@ require (
 	github.com/jessevdk/go-flags v1.4.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/k0kubun/pp/v3 v3.2.0 // indirect
-	github.com/lib/pq v1.10.9 // indirect
 	github.com/magiconair/properties v1.8.7 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.17 // indirect
