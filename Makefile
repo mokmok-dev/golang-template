@@ -6,6 +6,11 @@ dev:
 format:
 	$(call format)
 
+.PHONY: generate.sqlc
+generate.sqlc:
+	@go run github.com/kyleconroy/sqlc/cmd/sqlc generate -f sqlc.yaml
+	$(call format)
+
 .PHONY: generate.wire
 generate.wire:
 	@go run github.com/google/wire/cmd/wire ./...

@@ -1,0 +1,14 @@
+version: 2
+sql:
+  - engine: "postgresql"
+    schema: "schema.sql"
+    queries: "infra/postgres/queries"
+    gen:
+      go:
+        package: "model"
+        out: "infra/postgres/model"
+        sql_package: "database/sql"
+        emit_interface: true
+        emit_empty_slices: true
+        emit_result_struct_pointers: true
+        emit_params_struct_pointers: true
