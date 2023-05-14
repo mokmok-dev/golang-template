@@ -1,0 +1,27 @@
+name: Test
+on:
+  pull_request:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-test
+  cancel-in-progress: true
+jobs:
+  test:
+    name: Go test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go-version: ['1.20']
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: Use Go ${{ matrix.go-version }}
+        uses: actions/setup-go@v4
+        with:
+          go-version: ${{ matrix.go-version }}
+          cache: true
+      - name: Get number of CPU cores
+        uses: SimenB/github-actions-cpu-cores@v1
+        id: cpu-cores
+      - name: Run go test
+        run: go test -parallel ${{ steps.cpu-cores.outputs.count }} ./... -coverprofile=coverage.out
+      - uses: k1LoW/octocov-action@v0
