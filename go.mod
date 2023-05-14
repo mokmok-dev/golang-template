@@ -8,6 +8,8 @@ require (
 	github.com/k0kubun/sqldef v0.15.25
 	github.com/kyleconroy/sqlc v1.18.0
 	github.com/spf13/viper v1.15.0
+	github.com/uptrace/opentelemetry-go-extra/otelzap v0.2.0
+	go.uber.org/zap v1.24.0
 	golang.org/x/tools v0.9.1
 	mvdan.cc/gofumpt v0.5.0
 )
@@ -57,9 +59,11 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/subosito/gotenv v1.4.2 // indirect
 	github.com/tdewolff/parse/v2 v2.6.5 // indirect
+	github.com/uptrace/opentelemetry-go-extra/otelutil v0.2.0 // indirect
+	go.opentelemetry.io/otel v1.15.1 // indirect
+	go.opentelemetry.io/otel/trace v1.15.1 // indirect
 	go.uber.org/atomic v1.10.0 // indirect
-	go.uber.org/multierr v1.8.0 // indirect
-	go.uber.org/zap v1.21.0 // indirect
+	go.uber.org/multierr v1.9.0 // indirect
 	golang.org/x/exp v0.0.0-20221031165847-c99f073a8326 // indirect
 	golang.org/x/mod v0.10.0 // indirect
 	golang.org/x/net v0.10.0 // indirect
