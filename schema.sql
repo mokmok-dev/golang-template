@@ -1,1 +1,1 @@
-CREATE EXTENSION "timescaledb";
+CREATE EXTENSION IF NOT EXISTS "timescaledb";
