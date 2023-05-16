@@ -6,6 +6,11 @@ dev:
 format:
 	$(call format)
 
+.PHONY: generate.mock
+generate.mock:
+	@go generate ./domain/...
+	$(call format)
+
 .PHONY: generate.sqlc
 generate.sqlc:
 	@go run github.com/kyleconroy/sqlc/cmd/sqlc generate -f sqlc.yaml

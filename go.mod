@@ -6,6 +6,7 @@ require (
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/trace v1.13.1
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/propagator v0.37.1
 	github.com/cosmtrek/air v1.43.0
+	github.com/golang/mock v1.7.0-rc.1
 	github.com/google/wire v0.5.0
 	github.com/k0kubun/sqldef v0.15.25
 	github.com/kyleconroy/sqlc v1.18.0
