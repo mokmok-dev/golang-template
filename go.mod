@@ -6,12 +6,14 @@ require (
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/trace v1.13.1
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/propagator v0.37.1
 	github.com/cosmtrek/air v1.43.0
+	github.com/golang/mock v1.7.0-rc.1
 	github.com/google/wire v0.5.0
 	github.com/k0kubun/sqldef v0.15.25
 	github.com/kyleconroy/sqlc v1.18.0
 	github.com/lib/pq v1.10.9
 	github.com/ory/dockertest/v3 v3.10.0
 	github.com/spf13/viper v1.15.0
+	github.com/stretchr/testify v1.8.2
 	github.com/uptrace/opentelemetry-go-extra/otelzap v0.2.0
 	go.opentelemetry.io/contrib/detectors/gcp v1.16.1
 	go.opentelemetry.io/otel v1.15.1
