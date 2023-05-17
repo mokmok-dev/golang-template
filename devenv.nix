@@ -2,6 +2,7 @@
 
 {
   env = {
+    LOG_LEVEL = "debug";
     DATABASE_HOST = "localhost";
     DATABASE_PORT = "5432";
     DATABASE_USER = "pranc1ngpegasus";
