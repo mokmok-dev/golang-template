@@ -23,11 +23,11 @@ generate.wire:
 
 .PHONY: migrate.plan
 migrate.plan:
-	@go run github.com/k0kubun/sqldef/cmd/psqldef -h ${DATABASE_HOST} -p ${DATABASE_PORT} -U ${DATABASE_USER} -W ${DATABASE_PASSWORD} ${DATABASE_NAME} --dry-run < schema.sql
+	@go run github.com/k0kubun/sqldef/cmd/psqldef -h ${DATABASE_HOST} -p ${DATABASE_PORT} -U ${DATABASE_USER} ${DATABASE_NAME} --dry-run < schema.sql
 
 .PHONY: migrate.apply
 migrate.apply:
-	@go run github.com/k0kubun/sqldef/cmd/psqldef -h ${DATABASE_HOST} -p ${DATABASE_PORT} -U ${DATABASE_USER} -W ${DATABASE_PASSWORD} ${DATABASE_NAME} < schema.sql
+	@go run github.com/k0kubun/sqldef/cmd/psqldef -h ${DATABASE_HOST} -p ${DATABASE_PORT} -U ${DATABASE_USER} ${DATABASE_NAME} < schema.sql
 
 define format
 	@go run mvdan.cc/gofumpt -l -w .
