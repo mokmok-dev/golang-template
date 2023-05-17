@@ -1,2 +1,3 @@
 cmd/app/wire_gen.go linguist-generated=true
 infra/postgres/model/*.go linguist-generated=true
+devenv.lock linguist-generated=true
