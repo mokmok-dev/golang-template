@@ -1,28 +1,47 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
-  # https://devenv.sh/basics/
-  env.GREET = "devenv";
+  env = {
+    DATABASE_HOST = "localhost";
+    DATABASE_PORT = "5432";
+    DATABASE_USER = "pranc1ngpegasus";
+    DATABASE_PASSWORD = "password";
+    DATABASE_NAME = "golang-template";
+  };
 
-  # https://devenv.sh/packages/
-  packages = [ pkgs.git ];
+  packages = with pkgs; [
+    git
+  ];
 
-  # https://devenv.sh/scripts/
-  scripts.hello.exec = "echo hello from $GREET";
+  scripts = { };
 
   enterShell = ''
-    hello
     git --version
   '';
 
-  # https://devenv.sh/languages/
-  # languages.nix.enable = true;
+  languages = {
+    nix.enable = true;
+    go.enable = true;
+  };
 
-  # https://devenv.sh/pre-commit-hooks/
-  # pre-commit.hooks.shellcheck.enable = true;
+  pre-commit = { };
 
-  # https://devenv.sh/processes/
-  # processes.ping.exec = "ping example.com";
+  processes = { };
 
-  # See full reference at https://devenv.sh/reference/options/
+  services = {
+    postgres = {
+      enable = true;
+      package = pkgs.postgresql.withPackages (p: [ p.timescaledb ]);
+      listen_addresses = "127.0.0.1";
+      port = 5432;
+      initialDatabases = [
+        {
+          name = "golang-template";
+        }
+      ];
+      settings = {
+        unix_socket_directories = lib.mkForce "";
+      };
+    };
+  };
 }
