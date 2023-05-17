@@ -5,6 +5,20 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}-lint
   cancel-in-progress: true
 jobs:
+  devenv:
+    name: devenv
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v20
+      - uses: cachix/cachix-action@v12
+        with:
+          name: devenv
+      - run: nix profile install github:cachix/devenv/latest
+        shell: sh
+      - name: devenv ci
+        run: devenv ci
   eclint:
     name: eclint
     runs-on: ubuntu-latest
