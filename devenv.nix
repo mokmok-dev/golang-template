@@ -8,6 +8,11 @@
     DATABASE_USER = "pranc1ngpegasus";
     DATABASE_PASSWORD = "password";
     DATABASE_NAME = "golang-template";
+    EMAIL_HOST = "localhost";
+    EMAIL_PORT = "8025";
+    EMAIL_USER = "";
+    EMAIL_PASSWORD = "";
+    EMAIL_SENDER = "temma.fukaya@mokmok.dev";
   };
 
   packages = with pkgs; [
@@ -30,6 +35,10 @@
   processes = { };
 
   services = {
+    mailhog = {
+      enable = true;
+    };
+
     postgres = {
       enable = true;
       package = pkgs.postgresql.withPackages (p: [ p.timescaledb ]);
