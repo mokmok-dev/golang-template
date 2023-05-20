@@ -1,0 +1,54 @@
+name: Document
+on:
+  schedule:
+    - cron: 0 0 * * *
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-document
+  cancel-in-progress: true
+env:
+  DATABASE_HOST: "localhost"
+  DATABASE_PORT: "5432"
+  DATABASE_USER: "postgres"
+  DATABASE_NAME: "golang-template"
+jobs:
+  schema:
+    name: schema
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go-version: ['1.20']
+    services:
+      timescaledb:
+        image: timescale/timescaledb:latest-pg15
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_DB: ${{ env.DATABASE_NAME }}
+          POSTGRES_USER: ${{ env.DATABASE_USER }}
+          POSTGRES_HOST_AUTH_METHOD: trust
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: Use Go ${{ matrix.go-version }}
+        uses: actions/setup-go@v4
+        with:
+          go-version: ${{ matrix.go-version }}
+          cache: true
+      - name: Migrate postgres
+        run: make migrate.apply
+      - uses: k1low/setup-tbls@v1
+      - name: Generate ERD
+        run: tbls doc postgres://${{ env.DATABASE_USER }}@localhost:5432/${{ env.DATABASE_NAME }}?sslmode=disable docs/postgres
+      - uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: 'chore: update ERD'
+          commit-message: 'chore: update ERD'
+          branch: chore/update-erd
+          branch-suffix: timestamp
