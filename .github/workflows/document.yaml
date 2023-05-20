@@ -1,7 +1,8 @@
 name: Document
 on:
-  schedule:
-    - cron: 0 0 * * *
+  pull_requests:
+    types:
+      - closed
   workflow_dispatch:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}-document
