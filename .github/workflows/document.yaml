@@ -16,9 +16,6 @@ jobs:
   schema:
     name: schema
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        go-version: ['1.20']
     services:
       timescaledb:
         image: postgres
@@ -36,10 +33,10 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name: Use Go ${{ matrix.go-version }}
+      - name: Use Go
         uses: actions/setup-go@v4
         with:
-          go-version: ${{ matrix.go-version }}
+          go-version: '1.20'
           cache: true
       - name: Migrate postgres
         run: psql -f schema.sql postgres://${{ env.DATABASE_USER }}@localhost:5432/${{ env.DATABASE_NAME }}?sslmode=disable

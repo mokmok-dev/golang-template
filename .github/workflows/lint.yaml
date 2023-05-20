@@ -19,16 +19,13 @@ jobs:
   buf:
     name: buf
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        go-version: ['1.20']
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name: Use Go ${{ matrix.go-version }}
+      - name: Use Go
         uses: actions/setup-go@v4
         with:
-          go-version: ${{ matrix.go-version }}
+          go-version: '1.20'
           cache: true
       - name: buf format
         run: go run github.com/bufbuild/buf/cmd/buf format -w
@@ -62,16 +59,13 @@ jobs:
   golangci-lint:
     name: golangci-lint
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        go-version: ['1.20']
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name: Use Go ${{ matrix.go-version }}
+      - name: Use Go
         uses: actions/setup-go@v4
         with:
-          go-version: ${{ matrix.go-version }}
+          go-version: '1.20'
           cache: true
       - name: golangci-lint
         uses: reviewdog/action-golangci-lint@v2
@@ -81,16 +75,13 @@ jobs:
   gomod:
     name: gomod
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        go-version: ['1.20']
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name: Use Go ${{ matrix.go-version }}
+      - name: Use Go
         uses: actions/setup-go@v4
         with:
-          go-version: ${{ matrix.go-version }}
+          go-version: '1.20'
           cache: true
       - name: go mod tidy
         run: go mod tidy
@@ -99,16 +90,13 @@ jobs:
   gomock:
     name: gomock
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        go-version: ['1.20']
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name: Use Go ${{ matrix.go-version }}
+      - name: Use Go
         uses: actions/setup-go@v4
         with:
-          go-version: ${{ matrix.go-version }}
+          go-version: '1.20'
           cache: true
       - name: gomock generate
         run: make generate.mock
@@ -141,16 +129,13 @@ jobs:
   wire:
     name: wire
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        go-version: ['1.20']
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name: Use Go ${{ matrix.go-version }}
+      - name: Use Go
         uses: actions/setup-go@v4
         with:
-          go-version: ${{ matrix.go-version }}
+          go-version: '1.20'
           cache: true
       - name: wire generate
         run: make generate.wire
