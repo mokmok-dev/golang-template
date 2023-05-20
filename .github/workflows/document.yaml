@@ -1,7 +1,8 @@
 name: Document
 on:
-  schedule:
-    - cron: 0 0 * * *
+  pull_requests:
+    types:
+      - closed
   workflow_dispatch:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}-document
@@ -41,7 +42,7 @@ jobs:
           go-version: ${{ matrix.go-version }}
           cache: true
       - name: Migrate postgres
-        run: make migrate.apply
+        run: psql -f schema.sql postgres://${{ env.DATABASE_USER }}@localhost:5432/${{ env.DATABASE_NAME }}?sslmode=disable
       - uses: k1low/setup-tbls@v1
       - name: Generate ERD
         run: tbls doc postgres://${{ env.DATABASE_USER }}@localhost:5432/${{ env.DATABASE_NAME }}?sslmode=disable docs/postgres
