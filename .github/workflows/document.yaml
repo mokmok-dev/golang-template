@@ -1,6 +1,6 @@
 name: Document
 on:
-  pull_requests:
+  pull_request:
     types:
       - closed
   workflow_dispatch:
