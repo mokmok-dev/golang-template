@@ -1,0 +1,1 @@
+{"name":"golang-template","desc":"","tables":[],"relations":[],"functions":[],"driver":{"name":"postgres","database_version":"PostgreSQL 15.3 (Debian 15.3-1.pgdg110+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit","meta":{"current_schema":"public","search_paths":["\"$user\"","public"],"dict":{"Functions":"Stored procedures and functions"}}}}
