@@ -46,7 +46,7 @@ jobs:
       - uses: k1low/setup-tbls@v1
       - name: Generate ERD
         run: tbls doc --rm-dist postgres://${{ env.DATABASE_USER }}@localhost:5432/${{ env.DATABASE_NAME }}?sslmode=disable docs/postgres
-      - uses: technote-space/get-diff-action@v5
+      - uses: technote-space/get-diff-action@v6
         id: check-diff
         with:
           PATTERNS: |
