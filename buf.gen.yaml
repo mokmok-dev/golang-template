@@ -1,0 +1,14 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: github.com/mokmok-dev/golang-template/proto
+plugins:
+  - plugin: buf.build/protocolbuffers/go
+    out: proto
+    opt:
+      - paths=source_relative
+  - plugin: buf.build/bufbuild/connect-go
+    out: proto
+    opt:
+      - paths=source_relative
