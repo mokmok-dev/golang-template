@@ -46,7 +46,13 @@ jobs:
       - uses: k1low/setup-tbls@v1
       - name: Generate ERD
         run: tbls doc --rm-dist postgres://${{ env.DATABASE_USER }}@localhost:5432/${{ env.DATABASE_NAME }}?sslmode=disable docs/postgres
+      - uses: technote-space/get-diff-action@v5
+        id: check-diff
+        with:
+          PATTERNS: |
+            docs/postgres/*
       - uses: peter-evans/create-pull-request@v5
+        if: steps.check-diff.outputs.diff
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: 'chore: update ERD'
