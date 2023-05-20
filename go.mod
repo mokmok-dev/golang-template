@@ -23,6 +23,7 @@ require (
 	go.opentelemetry.io/otel/trace v1.15.1
 	go.uber.org/multierr v1.11.0
 	go.uber.org/zap v1.24.0
+	google.golang.org/protobuf v1.30.0
 )
 
 require (
@@ -266,7 +267,6 @@ require (
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/genproto v0.0.0-20230323212658-478b75c54725 // indirect
 	google.golang.org/grpc v1.54.0 // indirect
-	google.golang.org/protobuf v1.30.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
