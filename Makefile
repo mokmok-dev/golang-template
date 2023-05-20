@@ -6,6 +6,13 @@ dev:
 format:
 	$(call format)
 
+.PHONY: generate.buf
+generate.buf:
+	@go run github.com/bufbuild/buf/cmd/buf mod update proto
+	@go run github.com/bufbuild/buf/cmd/buf format -w
+	@go run github.com/bufbuild/buf/cmd/buf generate
+	$(call format)
+
 .PHONY: generate.mock
 generate.mock:
 	@go generate ./domain/...
