@@ -8,7 +8,7 @@ require (
 	github.com/cosmtrek/air v1.43.0
 	github.com/golang/mock v1.7.0-rc.1
 	github.com/google/wire v0.5.0
-	github.com/k0kubun/sqldef v0.15.25
+	github.com/k0kubun/sqldef v0.15.26
 	github.com/kyleconroy/sqlc v1.18.0
 	github.com/lib/pq v1.10.9
 	github.com/ory/dockertest/v3 v3.10.0
