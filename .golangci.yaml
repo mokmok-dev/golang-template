@@ -1,0 +1,17 @@
+run:
+  go: '1.20'
+  concurrency: 4
+  timeout: 5m
+  tests: true
+  skip-dirs:
+    - .devenv
+  modules-download-mode: readonly
+  allow-parallel-runners: true
+output:
+  sort-results: false
+linters-settings:
+linters:
+  fast: true
+issues:
+  fix: true
+severity:
