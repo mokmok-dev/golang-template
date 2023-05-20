@@ -30,7 +30,6 @@ migrate.apply:
 	@go run github.com/k0kubun/sqldef/cmd/psqldef -h ${DATABASE_HOST} -p ${DATABASE_PORT} -U ${DATABASE_USER} ${DATABASE_NAME} < schema.sql
 
 define format
-	@go run mvdan.cc/gofumpt -l -w .
-	@go run golang.org/x/tools/cmd/goimports -w .
+	@go run github.com/golangci/golangci-lint/cmd/golangci-lint run
 	@go mod tidy
 endef
