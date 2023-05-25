@@ -7,7 +7,11 @@
 
 ## Relations
 
-![er](schema.svg)
+```mermaid
+erDiagram
+
+
+```
 
 ---
 
