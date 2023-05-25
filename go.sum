@@ -436,8 +436,8 @@ github.com/junk1tm/musttag v0.5.0 h1:bV1DTdi38Hi4pG4OVWa7Kap0hi0o7EczuK6wQt9zPOM
 github.com/junk1tm/musttag v0.5.0/go.mod h1:PcR7BA+oREQYvHwgjIDmw3exJeds5JzRcvEJTfjrA0M=
 github.com/k0kubun/pp/v3 v3.2.0 h1:h33hNTZ9nVFNP3u2Fsgz8JXiF5JINoZfFq4SvKJwNcs=
 github.com/k0kubun/pp/v3 v3.2.0/go.mod h1:ODtJQbQcIRfAD3N+theGCV1m/CBxweERz2dapdz1EwA=
-github.com/k0kubun/sqldef v0.15.27 h1:BmI+AH447gQ1jjNcA4UJHOKMAqvEJRYaimy2BNCgQfc=
-github.com/k0kubun/sqldef v0.15.27/go.mod h1:s+hs7ygLcrLwbrHrxlPvZgqtxsd4+s/yC4Z6PYKvvxA=
+github.com/k0kubun/sqldef v0.16.0 h1:YKNNMQrFDcJ9XuC4iM67aWGBcisiHjx/pX2d8vJgPgc=
+github.com/k0kubun/sqldef v0.16.0/go.mod h1:s+hs7ygLcrLwbrHrxlPvZgqtxsd4+s/yC4Z6PYKvvxA=
 github.com/kisielk/errcheck v1.5.0/go.mod h1:pFxgyoBC7bSaBwPgfKdkLd5X25qrDl4LWUI2bnpBCr8=
 github.com/kisielk/errcheck v1.6.3 h1:dEKh+GLHcWm2oN34nMvDzn1sqI0i0WxPvrgiJA5JuM8=
 github.com/kisielk/errcheck v1.6.3/go.mod h1:nXw/i/MfnvRHqXa7XXmQMUB0oNFGuBrNI8d8NLy0LPw=
