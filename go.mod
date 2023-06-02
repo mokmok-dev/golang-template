@@ -6,7 +6,7 @@ require (
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/trace v1.15.0
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/propagator v0.37.1
 	github.com/bufbuild/buf v1.20.0
-	github.com/cosmtrek/air v1.43.0
+	github.com/cosmtrek/air v1.44.0
 	github.com/golang/mock v1.7.0-rc.1
 	github.com/golangci/golangci-lint v1.52.2
 	github.com/google/wire v0.5.0
