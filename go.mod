@@ -10,7 +10,7 @@ require (
 	github.com/golang/mock v1.7.0-rc.1
 	github.com/golangci/golangci-lint v1.53.3
 	github.com/google/wire v0.5.0
-	github.com/k0kubun/sqldef v0.16.1
+	github.com/k0kubun/sqldef v0.16.2
 	github.com/kyleconroy/sqlc v1.18.0
 	github.com/lib/pq v1.10.9
 	github.com/ory/dockertest/v3 v3.10.0
@@ -189,7 +189,7 @@ require (
 	github.com/opencontainers/runc v1.1.5 // indirect
 	github.com/pelletier/go-toml v1.9.5 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.8 // indirect
-	github.com/pganalyze/pg_query_go/v4 v4.2.0 // indirect
+	github.com/pganalyze/pg_query_go/v4 v4.2.1 // indirect
 	github.com/pingcap/errors v0.11.5-0.20210425183316-da1aaba5fb63 // indirect
 	github.com/pingcap/log v0.0.0-20210906054005-afc726e70354 // indirect
 	github.com/pingcap/tidb/parser v0.0.0-20220725134311-c80026e61f00 // indirect
