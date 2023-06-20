@@ -9,6 +9,7 @@ resource "github_repository" "golang_template" {
   allow_update_branch    = true
   delete_branch_on_merge = true
   has_issues             = true
+  is_template            = true
   visibility             = "public"
 }
 
