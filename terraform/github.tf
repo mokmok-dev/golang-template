@@ -1,4 +1,4 @@
-resource "github_repository" "golang-template" {
+resource "github_repository" "golang_template" {
   name        = "golang-template"
   description = "Server-side application template written in Go"
 
@@ -9,11 +9,12 @@ resource "github_repository" "golang-template" {
   allow_update_branch    = true
   delete_branch_on_merge = true
   has_issues             = true
+  is_template            = true
   visibility             = "public"
 }
 
 resource "github_branch_protection" "main" {
-  repository_id       = github_repository.golang-template.id
+  repository_id       = github_repository.golang_template.id
   pattern             = "main"
   allows_force_pushes = true
 }
