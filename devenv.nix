@@ -27,7 +27,10 @@
 
   languages = {
     nix.enable = true;
-    go.enable = true;
+    go = {
+      enable = true;
+      package = pkgs.go_1_20;
+    };
   };
 
   pre-commit = { };
