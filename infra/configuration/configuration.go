@@ -10,7 +10,10 @@ import (
 )
 
 var NewConfigSet = wire.NewSet(
+	wire.FieldsOf(new(*domain.Config), "Log"),
+	wire.FieldsOf(new(*domain.Config), "Database"),
 	wire.FieldsOf(new(*domain.Config), "Email"),
+	wire.FieldsOf(new(*domain.Config), "GCP"),
 	NewConfig,
 )
 
