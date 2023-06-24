@@ -2,6 +2,7 @@ package configuration
 
 type Config struct {
 	Log      Log
+	Server   Server
 	Database Database
 	Email    Email
 	GCP      GCP
@@ -9,6 +10,10 @@ type Config struct {
 
 type Log struct {
 	Level string
+}
+
+type Server struct {
+	Port string
 }
 
 type Database struct {
