@@ -71,6 +71,10 @@ func NewTracer(
 	}, nil
 }
 
+func (t *Tracer) Provider() trace.TracerProvider {
+	return t.provider
+}
+
 func (t *Tracer) Tracer() trace.Tracer {
 	return t.provider.Tracer("")
 }

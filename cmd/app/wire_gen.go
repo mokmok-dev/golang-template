@@ -6,13 +6,50 @@
 
 package main
 
+import (
+	"context"
+	"github.com/mokmok-dev/golang-template/adapter/handler"
+	"github.com/mokmok-dev/golang-template/adapter/server"
+	logger2 "github.com/mokmok-dev/golang-template/domain/logger"
+	"github.com/mokmok-dev/golang-template/infra/configuration"
+	"github.com/mokmok-dev/golang-template/infra/logger"
+	"github.com/mokmok-dev/golang-template/infra/tracer"
+	"net/http"
+)
+
 // Injectors from wire.go:
 
 func initialize() (*app, error) {
-	mainApp := &app{}
+	contextContext := context.Background()
+	config, err := configuration.NewConfig()
+	if err != nil {
+		return nil, err
+	}
+	log := config.Log
+	loggerLogger, err := logger.NewLogger(log)
+	if err != nil {
+		return nil, err
+	}
+	gcp := config.GCP
+	tracerTracer, err := tracer.NewTracer(gcp)
+	if err != nil {
+		return nil, err
+	}
+	configurationServer := config.Server
+	handlerHandler := handler.NewHandler(loggerLogger, tracerTracer)
+	httpServer := server.NewServer(loggerLogger, tracerTracer, configurationServer, handlerHandler)
+	mainApp := &app{
+		ctx:    contextContext,
+		logger: loggerLogger,
+		server: httpServer,
+	}
 	return mainApp, nil
 }
 
 // wire.go:
 
-type app struct{}
+type app struct {
+	ctx    context.Context
+	logger logger2.Logger
+	server *http.Server
+}
