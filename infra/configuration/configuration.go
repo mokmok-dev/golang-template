@@ -2,11 +2,10 @@ package configuration
 
 import (
 	"fmt"
-	"strings"
 
 	"github.com/google/wire"
+	"github.com/kelseyhightower/envconfig"
 	domain "github.com/mokmok-dev/golang-template/domain/configuration"
-	"github.com/spf13/viper"
 )
 
 var NewConfigSet = wire.NewSet(
@@ -19,16 +18,10 @@ var NewConfigSet = wire.NewSet(
 )
 
 func NewConfig() (*domain.Config, error) {
-	viper.AutomaticEnv()
-	viper.SetEnvKeyReplacer(strings.NewReplacer(".", "_"))
-
-	if err := viper.ReadInConfig(); err != nil {
-		return nil, fmt.Errorf("failed to load environment variables: %w", err)
-	}
-
 	config := new(domain.Config)
-	if err := viper.Unmarshal(config); err != nil {
-		return nil, fmt.Errorf("failed to unmarshal environment variable: %w", err)
+
+	if err := envconfig.Process("", config); err != nil {
+		return nil, fmt.Errorf("failed to load environment variables: %w", err)
 	}
 
 	return config, nil
