@@ -9,6 +9,7 @@ import (
 )
 
 type Tracer interface {
+	Provider() trace.TracerProvider
 	Tracer() trace.Tracer
 	Shutdown(context.Context) error
 }

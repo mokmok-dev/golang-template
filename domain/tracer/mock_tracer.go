@@ -35,6 +35,20 @@ func (m *MockTracer) EXPECT() *MockTracerMockRecorder {
 	return m.recorder
 }
 
+// Provider mocks base method.
+func (m *MockTracer) Provider() trace.TracerProvider {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Provider")
+	ret0, _ := ret[0].(trace.TracerProvider)
+	return ret0
+}
+
+// Provider indicates an expected call of Provider.
+func (mr *MockTracerMockRecorder) Provider() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Provider", reflect.TypeOf((*MockTracer)(nil).Provider))
+}
+
 // Shutdown mocks base method.
 func (m *MockTracer) Shutdown(arg0 context.Context) error {
 	m.ctrl.T.Helper()
