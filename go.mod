@@ -12,10 +12,10 @@ require (
 	github.com/golangci/golangci-lint v1.53.3
 	github.com/google/wire v0.5.0
 	github.com/k0kubun/sqldef v0.16.2
+	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/kyleconroy/sqlc v1.18.0
 	github.com/lib/pq v1.10.9
 	github.com/ory/dockertest/v3 v3.10.0
-	github.com/spf13/viper v1.16.0
 	github.com/stretchr/testify v1.8.4
 	github.com/uptrace/opentelemetry-go-extra/otelzap v0.2.1
 	go.opentelemetry.io/contrib/detectors/gcp v1.17.0
@@ -231,6 +231,7 @@ require (
 	github.com/spf13/cobra v1.7.0 // indirect
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
+	github.com/spf13/viper v1.16.0 // indirect
 	github.com/ssgreg/nlreturn/v2 v2.2.1 // indirect
 	github.com/stbenjam/no-sprintf-host-port v0.1.1 // indirect
 	github.com/stretchr/objx v0.5.0 // indirect
