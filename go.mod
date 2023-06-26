@@ -3,7 +3,7 @@ module github.com/mokmok-dev/golang-template
 go 1.20
 
 require (
-	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/trace v1.15.0
+	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/trace v1.15.2
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/propagator v0.39.0
 	github.com/bufbuild/buf v1.22.0
 	github.com/bufbuild/connect-go v1.8.0
@@ -43,7 +43,7 @@ require (
 	github.com/Djarvur/go-err113 v0.0.0-20210108212216-aea10b59be24 // indirect
 	github.com/GaijinEntertainment/go-exhaustruct/v2 v2.3.0 // indirect
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/detectors/gcp v1.13.1 // indirect
-	github.com/GoogleCloudPlatform/opentelemetry-operations-go/internal/resourcemapping v0.39.0 // indirect
+	github.com/GoogleCloudPlatform/opentelemetry-operations-go/internal/resourcemapping v0.39.2 // indirect
 	github.com/Masterminds/semver v1.5.0 // indirect
 	github.com/Microsoft/go-winio v0.6.1 // indirect
 	github.com/Nvveen/Gotty v0.0.0-20120604004816-cd527374f1e5 // indirect
