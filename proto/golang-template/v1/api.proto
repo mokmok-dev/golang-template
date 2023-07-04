@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-package v1;
-
-option go_package = "github.com/mokmok-dev/golang-template/proto/golang-template/v1";
-
-service GolangTemplateService {}
