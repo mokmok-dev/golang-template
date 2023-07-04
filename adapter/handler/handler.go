@@ -7,6 +7,7 @@ import (
 	"github.com/mokmok-dev/golang-template/adapter/handler/middleware"
 	"github.com/mokmok-dev/golang-template/domain/logger"
 	"github.com/mokmok-dev/golang-template/domain/tracer"
+	"github.com/mokmok-dev/golang-template/proto/golang-template/v1/v1connect"
 )
 
 var _ http.Handler = (*Handler)(nil)
@@ -25,6 +26,7 @@ type Handler struct {
 func NewHandler(
 	logger logger.Logger,
 	tracer tracer.Tracer,
+	user v1connect.UserServiceHandler,
 ) *Handler {
 	mux := http.NewServeMux()
 
@@ -39,6 +41,7 @@ func NewHandler(
 	}
 
 	mux.HandleFunc("/healthcheck", h.healthcheck)
+	mux.Handle(v1connect.NewUserServiceHandler(user))
 
 	return h
 }

@@ -13,7 +13,11 @@ import (
 	logger2 "github.com/mokmok-dev/golang-template/domain/logger"
 	"github.com/mokmok-dev/golang-template/infra/configuration"
 	"github.com/mokmok-dev/golang-template/infra/logger"
+	"github.com/mokmok-dev/golang-template/infra/postgres"
+	"github.com/mokmok-dev/golang-template/infra/postgres/model"
+	"github.com/mokmok-dev/golang-template/infra/repository"
 	"github.com/mokmok-dev/golang-template/infra/tracer"
+	"github.com/mokmok-dev/golang-template/usecase"
 	"net/http"
 )
 
@@ -36,7 +40,19 @@ func initialize() (*app, error) {
 		return nil, err
 	}
 	configurationServer := config.Server
-	handlerHandler := handler.NewHandler(loggerLogger, tracerTracer)
+	database := config.Database
+	db, err := postgres.NewPostgres(contextContext, loggerLogger, database)
+	if err != nil {
+		return nil, err
+	}
+	queries := model.New(db)
+	repositoryRepository := repository.NewRepository(tracerTracer, db, queries)
+	createUser := usecase.NewCreateUser(loggerLogger, tracerTracer, repositoryRepository)
+	getUserByID := usecase.NewGetUserByID(loggerLogger, tracerTracer, repositoryRepository)
+	updateUserByID := usecase.NewUpdateUserByID(loggerLogger, tracerTracer, repositoryRepository)
+	removeUserByID := usecase.NewRemoveUserByID(loggerLogger, tracerTracer, repositoryRepository)
+	user := handler.NewUser(loggerLogger, tracerTracer, createUser, getUserByID, updateUserByID, removeUserByID)
+	handlerHandler := handler.NewHandler(loggerLogger, tracerTracer, user)
 	httpServer := server.NewServer(loggerLogger, tracerTracer, configurationServer, handlerHandler)
 	mainApp := &app{
 		ctx:    contextContext,

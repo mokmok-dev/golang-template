@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package v1;
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/mokmok-dev/golang-template/proto/golang-template/v1";
+
+message User {
+  string id = 1;
+  google.protobuf.Timestamp created_at = 2;
+  google.protobuf.Timestamp updated_at = 3;
+}
+
+message CreateUserRequest {}
+
+message CreateUserResponse {
+  User user = 1;
+}
+
+message GetUserByIDRequest {
+  string id = 1;
+}
+
+message GetUserByIDResponse {
+  User user = 1;
+}
+
+message UpdateUserByIDRequest {
+  string id = 1;
+}
+
+message UpdateUserByIDResponse {
+  User user = 1;
+}
+
+message RemoveUserByIDRequest {
+  string id = 1;
+}
+
+service UserService {
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+  rpc GetUserByID(GetUserByIDRequest) returns (GetUserByIDResponse);
+  rpc UpdateUserByID(UpdateUserByIDRequest) returns (UpdateUserByIDResponse);
+  rpc RemoveUserByID(RemoveUserByIDRequest) returns (google.protobuf.Empty);
+}

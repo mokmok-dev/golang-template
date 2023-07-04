@@ -9,6 +9,7 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
+	model "github.com/mokmok-dev/golang-template/domain/model"
 )
 
 // MockRepository is a mock of Repository interface.
@@ -32,6 +33,65 @@ func NewMockRepository(ctrl *gomock.Controller) *MockRepository {
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockRepository) EXPECT() *MockRepositoryMockRecorder {
 	return m.recorder
+}
+
+// CreateUser mocks base method.
+func (m *MockRepository) CreateUser(arg0 context.Context, arg1 *model.User) (*model.User, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CreateUser", arg0, arg1)
+	ret0, _ := ret[0].(*model.User)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CreateUser indicates an expected call of CreateUser.
+func (mr *MockRepositoryMockRecorder) CreateUser(arg0, arg1 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateUser", reflect.TypeOf((*MockRepository)(nil).CreateUser), arg0, arg1)
+}
+
+// GetUsersByID mocks base method.
+func (m *MockRepository) GetUsersByID(arg0 context.Context, arg1 model.UserID) (*model.User, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "GetUsersByID", arg0, arg1)
+	ret0, _ := ret[0].(*model.User)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// GetUsersByID indicates an expected call of GetUsersByID.
+func (mr *MockRepositoryMockRecorder) GetUsersByID(arg0, arg1 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetUsersByID", reflect.TypeOf((*MockRepository)(nil).GetUsersByID), arg0, arg1)
+}
+
+// RemoveUserByID mocks base method.
+func (m *MockRepository) RemoveUserByID(arg0 context.Context, arg1 model.UserID) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "RemoveUserByID", arg0, arg1)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// RemoveUserByID indicates an expected call of RemoveUserByID.
+func (mr *MockRepositoryMockRecorder) RemoveUserByID(arg0, arg1 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RemoveUserByID", reflect.TypeOf((*MockRepository)(nil).RemoveUserByID), arg0, arg1)
+}
+
+// UpdateUserByID mocks base method.
+func (m *MockRepository) UpdateUserByID(arg0 context.Context, arg1 *model.User) (*model.User, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UpdateUserByID", arg0, arg1)
+	ret0, _ := ret[0].(*model.User)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// UpdateUserByID indicates an expected call of UpdateUserByID.
+func (mr *MockRepositoryMockRecorder) UpdateUserByID(arg0, arg1 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateUserByID", reflect.TypeOf((*MockRepository)(nil).UpdateUserByID), arg0, arg1)
 }
 
 // WithTx mocks base method.

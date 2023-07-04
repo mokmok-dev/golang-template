@@ -9,7 +9,10 @@ import (
 )
 
 type Querier interface {
-	REMOVEME(ctx context.Context) error
+	CreateUser(ctx context.Context, arg *CreateUserParams) (*User, error)
+	GetUserByID(ctx context.Context, id string) (*User, error)
+	RemoveUserByID(ctx context.Context, id string) error
+	UpdateUserByID(ctx context.Context, arg *UpdateUserByIDParams) (*User, error)
 }
 
 var _ Querier = (*Queries)(nil)
