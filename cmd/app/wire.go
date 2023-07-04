@@ -13,7 +13,11 @@ import (
 	domainlogger "github.com/mokmok-dev/golang-template/domain/logger"
 	"github.com/mokmok-dev/golang-template/infra/configuration"
 	"github.com/mokmok-dev/golang-template/infra/logger"
+	"github.com/mokmok-dev/golang-template/infra/postgres"
+	"github.com/mokmok-dev/golang-template/infra/postgres/model"
+	"github.com/mokmok-dev/golang-template/infra/repository"
 	"github.com/mokmok-dev/golang-template/infra/tracer"
+	"github.com/mokmok-dev/golang-template/usecase"
 )
 
 type app struct {
@@ -29,7 +33,15 @@ func initialize() (*app, error) {
 		tracer.NewTracerSet,
 		logger.NewLoggerSet,
 		handler.NewHandlerSet,
+		handler.NewUserSet,
 		server.NewServerSet,
+		usecase.NewCreateUserSet,
+		usecase.NewGetUserByIDSet,
+		usecase.NewUpdateUserByIDSet,
+		usecase.NewRemoveUserByIDSet,
+		repository.NewRepositorySet,
+		model.NewConnSet,
+		postgres.NewPostgresSet,
 
 		wire.Struct(new(app), "*"),
 	)
