@@ -4,6 +4,7 @@
 
 | Name | Columns | Comment | Type |
 | ---- | ------- | ------- | ---- |
+| [public.users](public.users.md) | 3 |  | BASE TABLE |
 
 ## Relations
 
@@ -11,6 +12,11 @@
 erDiagram
 
 
+"public.users" {
+  text id
+  timestamp_with_time_zone created_at
+  timestamp_with_time_zone updated_at
+}
 ```
 
 ---
