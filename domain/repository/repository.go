@@ -5,5 +5,7 @@ package repository
 import "context"
 
 type Repository interface {
+	User
+
 	WithTx(context.Context, func(context.Context, Repository) error) error
 }
