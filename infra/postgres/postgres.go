@@ -11,9 +11,13 @@ import (
 	_ "github.com/lib/pq"
 	"github.com/mokmok-dev/golang-template/domain/configuration"
 	"github.com/mokmok-dev/golang-template/domain/logger"
+	"github.com/mokmok-dev/golang-template/infra/postgres/model"
 )
 
+var _ model.DBTX = (*sql.DB)(nil)
+
 var NewPostgresSet = wire.NewSet(
+	wire.Bind(new(model.DBTX), new(*sql.DB)),
 	NewPostgres,
 )
 
