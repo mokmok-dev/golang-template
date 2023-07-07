@@ -18,7 +18,7 @@ require (
 	github.com/ory/dockertest/v3 v3.10.0
 	github.com/stretchr/testify v1.8.4
 	github.com/uptrace/opentelemetry-go-extra/otelzap v0.2.2
-	go.jetpack.io/typeid v0.0.0-20230703193215-116c441e8150
+	go.jetpack.io/typeid v0.0.0-20230706123434-8e6c7bc01636
 	go.opentelemetry.io/contrib/detectors/gcp v1.17.0
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.42.0
 	go.opentelemetry.io/otel v1.16.0
