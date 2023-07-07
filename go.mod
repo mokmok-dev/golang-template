@@ -13,7 +13,7 @@ require (
 	github.com/google/wire v0.5.0
 	github.com/k0kubun/sqldef v0.16.2
 	github.com/kelseyhightower/envconfig v1.4.0
-	github.com/kyleconroy/sqlc v1.18.0
+	github.com/kyleconroy/sqlc v1.19.0
 	github.com/lib/pq v1.10.9
 	github.com/ory/dockertest/v3 v3.10.0
 	github.com/stretchr/testify v1.8.4
@@ -103,6 +103,7 @@ require (
 	github.com/go-critic/go-critic v0.8.1 // indirect
 	github.com/go-logr/logr v1.2.4 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
+	github.com/go-sql-driver/mysql v1.7.1 // indirect
 	github.com/go-toolsmith/astcast v1.1.0 // indirect
 	github.com/go-toolsmith/astcopy v1.1.0 // indirect
 	github.com/go-toolsmith/astequal v1.1.0 // indirect
@@ -127,6 +128,7 @@ require (
 	github.com/golangci/misspell v0.4.0 // indirect
 	github.com/golangci/revgrep v0.0.0-20220804021717-745bb2f7c2e6 // indirect
 	github.com/golangci/unconvert v0.0.0-20180507085042-28b1c447d1f4 // indirect
+	github.com/google/cel-go v0.16.0 // indirect
 	github.com/google/go-cmp v0.5.9 // indirect
 	github.com/google/go-containerregistry v0.15.2 // indirect
 	github.com/google/pprof v0.0.0-20230602150820-91b7bce49751 // indirect
@@ -147,6 +149,9 @@ require (
 	github.com/hexops/gotextdiff v1.0.3 // indirect
 	github.com/imdario/mergo v0.3.13 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
+	github.com/jackc/pgpassfile v1.0.0 // indirect
+	github.com/jackc/pgservicefile v0.0.0-20221227161230-091c0ba34f0a // indirect
+	github.com/jackc/pgx/v5 v5.4.1 // indirect
 	github.com/jdxcode/netrc v0.0.0-20221124155335-4616370d1a84 // indirect
 	github.com/jessevdk/go-flags v1.4.0 // indirect
 	github.com/jgautheron/goconst v1.5.1 // indirect
@@ -174,6 +179,7 @@ require (
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.17 // indirect
 	github.com/mattn/go-runewidth v0.0.9 // indirect
+	github.com/mattn/go-sqlite3 v1.14.17 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.1 // indirect
 	github.com/mbilski/exhaustivestruct v1.2.0 // indirect
 	github.com/mgechev/revive v1.3.2 // indirect
@@ -211,7 +217,7 @@ require (
 	github.com/quasilyte/regex/syntax v0.0.0-20210819130434-b3f0c404a727 // indirect
 	github.com/quasilyte/stdinfo v0.0.0-20220114132959-f7386bf02567 // indirect
 	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
-	github.com/riza-io/grpc-go v0.1.0 // indirect
+	github.com/riza-io/grpc-go v0.2.0 // indirect
 	github.com/rs/cors v1.9.0 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/ryancurrah/gomodguard v1.3.0 // indirect
@@ -235,6 +241,7 @@ require (
 	github.com/spf13/viper v1.16.0 // indirect
 	github.com/ssgreg/nlreturn/v2 v2.2.1 // indirect
 	github.com/stbenjam/no-sprintf-host-port v0.1.1 // indirect
+	github.com/stoewer/go-strcase v1.2.0 // indirect
 	github.com/stretchr/objx v0.5.0 // indirect
 	github.com/subosito/gotenv v1.4.2 // indirect
 	github.com/t-yuki/gocover-cobertura v0.0.0-20180217150009-aaee18c8195c // indirect
@@ -277,7 +284,7 @@ require (
 	google.golang.org/api v0.122.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/genproto v0.0.0-20230410155749-daa745c078e1 // indirect
-	google.golang.org/grpc v1.55.0 // indirect
+	google.golang.org/grpc v1.56.1 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
