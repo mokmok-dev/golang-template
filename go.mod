@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/trace v1.16.1
-	github.com/GoogleCloudPlatform/opentelemetry-operations-go/propagator v0.39.2
+	github.com/GoogleCloudPlatform/opentelemetry-operations-go/propagator v0.40.1
 	github.com/bufbuild/buf v1.23.1
 	github.com/bufbuild/connect-go v1.9.0
 	github.com/cosmtrek/air v1.44.0
