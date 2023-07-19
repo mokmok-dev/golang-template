@@ -5,5 +5,8 @@
   ],
   "postUpdateOptions": [
     "gomodTidy"
+  ],
+  "schedule": [
+    "every weekend"
   ]
 }
