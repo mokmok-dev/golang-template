@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/trace v1.17.0
-	github.com/GoogleCloudPlatform/opentelemetry-operations-go/propagator v0.41.0
+	github.com/GoogleCloudPlatform/opentelemetry-operations-go/propagator v0.45.0
 	github.com/bufbuild/buf v1.25.0
 	github.com/bufbuild/connect-go v1.10.0
 	github.com/cosmtrek/air v1.44.0
@@ -21,9 +21,9 @@ require (
 	go.jetpack.io/typeid v0.1.0
 	go.opentelemetry.io/contrib/detectors/gcp v1.17.0
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.42.0
-	go.opentelemetry.io/otel v1.18.0
+	go.opentelemetry.io/otel v1.19.0
 	go.opentelemetry.io/otel/sdk v1.16.0
-	go.opentelemetry.io/otel/trace v1.18.0
+	go.opentelemetry.io/otel/trace v1.19.0
 	go.uber.org/multierr v1.11.0
 	go.uber.org/zap v1.26.0
 	google.golang.org/protobuf v1.31.0
@@ -266,7 +266,7 @@ require (
 	github.com/ykadowak/zerologlint v0.1.2 // indirect
 	gitlab.com/bosi/decorder v0.2.3 // indirect
 	go.opencensus.io v0.24.0 // indirect
-	go.opentelemetry.io/otel/metric v1.18.0 // indirect
+	go.opentelemetry.io/otel/metric v1.19.0 // indirect
 	go.tmz.dev/musttag v0.7.0 // indirect
 	go.uber.org/atomic v1.11.0 // indirect
 	golang.org/x/crypto v0.12.0 // indirect
