@@ -1,13 +1,15 @@
 module github.com/mokmok-dev/golang-template
 
-go 1.20
+go 1.21
+
+toolchain go1.21.4
 
 require (
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/trace v1.17.0
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/propagator v0.41.0
 	github.com/bufbuild/buf v1.25.0
 	github.com/bufbuild/connect-go v1.10.0
-	github.com/cosmtrek/air v1.44.0
+	github.com/cosmtrek/air v1.49.0
 	github.com/golang/mock v1.7.0-rc.1
 	github.com/golangci/golangci-lint v1.53.3
 	github.com/google/wire v0.5.0
@@ -35,6 +37,7 @@ require (
 	cloud.google.com/go/compute v1.19.1 // indirect
 	cloud.google.com/go/compute/metadata v0.2.3 // indirect
 	cloud.google.com/go/trace v1.9.0 // indirect
+	dario.cat/mergo v1.0.0 // indirect
 	github.com/4meepo/tagalign v1.2.2 // indirect
 	github.com/Abirdcfly/dupword v0.0.11 // indirect
 	github.com/Antonboom/errname v0.1.10 // indirect
