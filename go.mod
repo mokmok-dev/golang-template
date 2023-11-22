@@ -13,7 +13,7 @@ require (
 	github.com/google/wire v0.5.0
 	github.com/k0kubun/sqldef v0.16.10
 	github.com/kelseyhightower/envconfig v1.4.0
-	github.com/kyleconroy/sqlc v1.19.1
+	github.com/kyleconroy/sqlc v1.24.0
 	github.com/lib/pq v1.10.9
 	github.com/ory/dockertest/v3 v3.10.0
 	github.com/stretchr/testify v1.8.4
